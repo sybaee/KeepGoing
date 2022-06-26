@@ -1,0 +1,511 @@
+<html>
+  <head>
+    <title>FINST</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container-index">
+      <header class="hero-top">
+        <h3>
+          <span style="font-size: 2em;" class="highlight">FINST</span>
+          <span style="font-size: 1em;"> KOSPI50 </span>
+        </h3>
+        <h5>
+          <span style="font-size: 1em;">Financial Statement is All In</span>
+        </h5>
+      </header>
+
+      <form class="nav-search" action="finst.php" method="post">
+        <input
+          class="input-search"
+          id="inputTickerCode"
+          type="number"
+          name="company_code"
+          onkeypress="onlyNumber()"
+          oninput="maxLengthCheck(this)"
+          maxlength="6"
+          max="999999"
+          min="000001"
+          placeholder="Type Comany Code (6-digit)"
+          autocomplete="off"
+          required
+        />
+        <input
+          class="btn-search"
+          id="btnSearch"
+          type="submit"
+          value="Click →"
+        />
+        <script
+          src="http://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"
+        ></script>
+      </form>
+
+      <ol class="list-stocks">
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Hite Jinro</h4>
+              <h4 class="ticker-code">000080</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SAMSUNG</h4>
+              <h4 class="ticker-code">005930</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">GS Retail</h4>
+              <h4 class="ticker-code">007070</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LG INNOTEK</h4>
+              <h4 class="ticker-code">011070</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">AEKYUNG</h4>
+              <h4 class="ticker-code">018250</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SAMSUNG SDS</h4>
+              <h4 class="ticker-code">018260</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">ILJIN</h4>
+              <h4 class="ticker-code">020150</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">DONGSUH</h4>
+              <h4 class="ticker-code">026960</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">BGF</h4>
+              <h4 class="ticker-code">027410</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SAMSUNG C&T</h4>
+              <h4 class="ticker-code">028260</h4>
+            </a>
+          </div>
+        </li>
+
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Panocean</h4>
+              <h4 class="ticker-code">028670</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SI Korea</h4>
+              <h4 class="ticker-code">031430</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LG Uplus</h4>
+              <h4 class="ticker-code">032640</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SK</h4>
+              <h4 class="ticker-code">034730</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">NAVER</h4>
+              <h4 class="ticker-code">035420</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">KAKAO corp</h4>
+              <h4 class="ticker-code">035720</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Celltrion</h4>
+              <h4 class="ticker-code">068270</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LOTTE Himart</h4>
+              <h4 class="ticker-code">071840</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LIG Nex1</h4>
+              <h4 class="ticker-code">079550</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Apgroup</h4>
+              <h4 class="ticker-code">090430</h4>
+            </a>
+          </div>
+        </li>
+
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LF</h4>
+              <h4 class="ticker-code">093050</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">JW HOLDINGS</h4>
+              <h4 class="ticker-code">096760</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SK Innovation</h4>
+              <h4 class="ticker-code">096770</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">CJ CHEILJEDANG</h4>
+              <h4 class="ticker-code">097950</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Poongsan</h4>
+              <h4 class="ticker-code">103140</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LG HAUSYS</h4>
+              <h4 class="ticker-code">108670</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">YOUNGONE</h4>
+              <h4 class="ticker-code">111770</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">GKL</h4>
+              <h4 class="ticker-code">114090</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">LOCK&LOCK</h4>
+              <h4 class="ticker-code">115390</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Kolon Industries</h4>
+              <h4 class="ticker-code">120110</h4>
+            </a>
+          </div>
+        </li>
+
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">EMART</h4>
+              <h4 class="ticker-code">139480</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SAMYANG corp</h4>
+              <h4 class="ticker-code">145990</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">HANKOOK TIRE</h4>
+              <h4 class="ticker-code">161390</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">KOLMAR</h4>
+              <h4 class="ticker-code">161890</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">DONG-A ST</h4>
+              <h4 class="ticker-code">170900</h4>
+            </a>
+          </div>
+        </li>
+
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">CKD Pharm</h4>
+              <h4 class="ticker-code">185750</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">CUCKOO</h4>
+              <h4 class="ticker-code">192400</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">COSMAX</h4>
+              <h4 class="ticker-code">192820</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">MANDO</h4>
+              <h4 class="ticker-code">204320</h4>
+            </a>
+          </div>
+        </li>
+
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SAMSUNG BIOLOGICS</h4>
+              <h4 class="ticker-code">207940</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">INNOCEAN</h4>
+              <h4 class="ticker-code">214320</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Doosan Bobcat</h4>
+              <h4 class="ticker-code">241560</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Netmarble</h4>
+              <h4 class="ticker-code">251270</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">HYUNDAI-Holdings</h4>
+              <h4 class="ticker-code">267250</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Orionworld</h4>
+              <h4 class="ticker-code">271560</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">BGF Retail</h4>
+              <h4 class="ticker-code">282330</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">SK Chemicals</h4>
+              <h4 class="ticker-code">285130</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">HYUNDAI-Development</h4>
+              <h4 class="ticker-code">294870</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">HYOSUNG Heavy Industries</h4>
+              <h4 class="ticker-code">298040</h4>
+            </a>
+          </div>
+        </li>
+        <li class="list-item">
+          <div class="company-info">
+            <a href="javascript:void(0)" onclick="tickerTransmitter(this)">
+              <h4 class="name-kr">Woori FG</h4>
+              <h4 class="ticker-code">316140</h4>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <script>
+      function onlyNumber() {
+        if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;
+      }
+
+      function maxLengthCheck(object) {
+        if (object.value.length > object.maxLength) {
+          object.value = object.value.slice(0, object.maxLength);
+        }
+      }
+
+      function tickerTransmitter(object) {
+        let inputTickerCode = document.getElementById("inputTickerCode");
+        let selectedCode = object.getElementsByClassName("ticker-code")[0]
+          .innerHTML;
+
+        inputTickerCode.value = selectedCode;
+      }
+    </script>
+
+    <div class="container-index" style="text-align: right;">
+      <header class="hero-top">
+        <h3>
+          <span style="font-size: 1.5em; color: #90c1d7;" class="highlight">
+            <br />
+            Contact Us <br />
+          </span>
+        </h3>
+
+        <h5>
+          <span style="font-size: 1.2em;">
+            Handong Global University <br />
+          </span>
+          <span style="font-size: 1em;">
+            Chanyeong Lee: 21400604@handong.edu <br />
+          </span>
+          <span style="font-size: 1em;">
+            Seungye Bae: 21600326@handong.edu <br />
+          </span>
+          <span style="font-size: 1em;">
+            Sujin Lim: 21600590@handong.edu <br />
+          </span>
+          <span style="font-size: 1em;">
+            Harim Song: 21700386@handong.edu <br />
+            <br />
+          </span>
+        </h5>
+      </header>
+    </div>
+  </body>
+</html>
